@@ -1,4 +1,8 @@
 # ASP.NET
+- task: VSBuild@1
+  inputs:
+    solution: '**\*.sln'
+    msbuildArgs: '/p:Configuration=Octopus /p:DeployOnBuild=true /p:PublishProfile=britishlibrarysitecore /p:PublishUrl=$(Build.ArtifactStagingDirectory) /p:TreatWarningsAsErrors=true'
 # Build and test ASP.NET projects.
 # Add steps that publish symbols, save build artifacts, deploy, and more:
 # https://docs.microsoft.com/azure/devops/pipelines/apps/aspnet/build-aspnet-4
